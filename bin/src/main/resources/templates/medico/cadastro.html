@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-expand-md bg-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><i class="oi oi-caret-right"></i>
+						<span>Cadastrar Médico</span></li>
+				</ul>
+				<a class="btn btn-primary btn-md" href="/medicos/listar"
+					role="button"> <span class="oi oi-spreadsheet" title="Listar"
+					aria-hidden="true"></span> <span>Listar Médicos</span>
+				</a>
+			</div>
+		</nav>
+
+		<div class="container" id="cadastro">
+			<form action="/medicos/salvar" method="POST">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="nome">Nome</label> <input type="text"
+							class="form-control" id="nome"
+							placeholder="Digite o nome do médico" autofocus="autofocus"
+							name="nome" value="" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="nome">CRM</label> <input type="text"
+							class="form-control" id="nome" placeholder="Digite o CRM"
+							autofocus="autofocus" name="nome" value="" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="cargo">Especialidade</label> <select
+							id="especialidade" class="form-control" name="cargo">
+							<option value="">Selecione...</option>
+							<option value="1">Clínico Geral</option>
+							<option value="2">Urologista</option>
+							<option value="3">Cardiologista</option>
+							<option value="4">Neurologista</option>
+							<option value="5">Obstetra</option>
+						</select>
+						<div class="invalid-feedback"></div>
+					</div>
+				</div>
+
+				<input type="hidden" id="id" name="id" value="" />
+				<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>

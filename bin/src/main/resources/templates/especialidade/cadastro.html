@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+
+		<nav class="navbar navbar-expand-md bg-light">
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><i class="oi oi-caret-right"></i>
+						<span>Cadastrar Especialidades</span></li>
+				</ul>
+				<a class="btn btn-primary btn-md" href="/especialidades/listar"
+					role="button"> <span class="oi oi-spreadsheet" title="Listar"
+					aria-hidden="true"></span> <span>Listar Especialidades</span>
+				</a>
+			</div>
+		</nav>
+
+		<div class="container" id="cadastro">
+			<form action="/especialidades/salvar" method="POST">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="nome">Nome</label> <input type="text"
+							class="form-control" id="nome"
+							placeholder="Digite o nome da especialidade"
+							autofocus="autofocus" name="nome" value="" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="nome">Descrição</label> <input type="text"
+							class="form-control" id="nome"
+							placeholder="Digite a descrição da especialidade"
+							autofocus="autofocus" name="nome" value="" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="cargo">Médico</label> <select id="medico"
+							class="form-control" name="cargo">
+							<option value="">Selecione...</option>
+							<option value="1">Roberval Ferraz</option>
+							<option value="2">Amauri Lima</option>
+							<option value="3">Carlos Figueira</option>
+							<option value="4">Adriano Carlos</option>
+							<option value="5">Robert London</option>
+						</select>
+						<div class="invalid-feedback"></div>
+					</div>
+				</div>
+
+				<input type="hidden" id="id" name="id" value="" />
+				<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>
